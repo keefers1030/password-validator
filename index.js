@@ -18,18 +18,16 @@ const validatePassword = () => {
     }
 
     // password check for number
-    for (var i = 0; i < password.length; i++) {
-        if (i !== Number) {
-            return false
+    const numerals = '0123456789'
+
+    for (let i = 0; i < password.length; i++) {
+        if (numerals.indexOf(password[i]) >= 0) {
+            return true
         }
     }
 
     // password check for character
-    for (let i = 0; i <= password.length; i++) {
-        if (password.indexOf(password.charAt(i)) !== -1) {
-            return false
-        }
-    }
+    
 }
 
 let password = 'HeyKittyGirl5!'
