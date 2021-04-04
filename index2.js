@@ -1,8 +1,6 @@
 /* eslint-disable no-console */
 /* eslint-disable indent */
 
-let password = ''
-
 let validatePassword = () => {
     if ((passwordLength) && (passwordUpperCase) && (passwordLowerCase) && (passwordNumber) && (passwordChar)) {
         return true
@@ -35,7 +33,7 @@ let passwordNumber = () => {
 }
 
 let passwordChar = () => {
-    let chars = '"~`!#$%^&*+=-[]\\\';,/{}|":<>?"'
+    let chars = '"~`!#$%^&*+=-[]\\\';,/{}|\":<>?"'
 
     for (let i = 0; i < password.length; i++) {
         if (chars.indexOf(password[i]) <= 0) {
