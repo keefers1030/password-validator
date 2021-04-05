@@ -5,20 +5,31 @@ let validatePassword = () => {
     if ((passwordLength) && (passwordUpperCase) && (passwordLowerCase) && (passwordNumber) && (passwordChar)) {
         return true
     }
-    else return false
+
+    else if (passwordLength === false) {
+        return false
+    }
 }
 
 let passwordLength = () => {
-    return (password.length >= 8)
+    if (password.length < 8) {
+        return false
+    }
+    else return true
 }
 
-
 let passwordUpperCase = () => {
-    return (password !== password.toUpperCase())
+    if (password == password.toUpperCase()) {
+        return false
+    }
+    else return true
 }
 
 let passwordLowerCase = () => {
-    return (password !== password.toLowerCase())
+    if (password == password.toLowerCase()) {
+        return false
+    }
+    else return true
 }
 
 let passwordNumber = () => {
@@ -33,10 +44,10 @@ let passwordNumber = () => {
 }
 
 let passwordChar = () => {
-    let chars = '"~`!#$%^&*+=-[]\\\';,/{}|\":<>?"'
+    let chars = '"~`!#$%^&*+=-[]\\\';,/{}|":<>?"'
 
     for (let i = 0; i < password.length; i++) {
-        if (chars.indexOf(password[i]) <= 0) {
+        if (chars.indexOf(password[i]) >= 0) {
             return true
         }
         else return false
